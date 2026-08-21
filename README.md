@@ -17,18 +17,29 @@ It builds directly upon object-oriented design principles, custom dynamic memory
 
 ## 📂 Repository Structure
 
-| Topic | Category | Description | Status |
-| :--- | :--- | :--- | :--- |
-| **Topic 14** | Analysis | Time & Space Complexity (Big-O Notation) | ⏳ In Progress |
-| **Topic 15** | Linear DS | Dynamic Arrays & Resizing Mechanics | 📅 Planned |
-| **Topic 16** | Linear DS | Singly & Doubly Linked Lists | 📅 Planned |
-| **Topic 17** | Linear DS | Stacks & Queues (Custom & STL) | 📅 Planned |
-| **Topic 18** | Sorting/Searching| Binary Search & $\mathcal{O}(N \log N)$ Sorting Algorithms | 📅 Planned |
-| **Topic 19** | Trees | Binary Search Trees (BST) & Traversals | 📅 Planned |
-| **Topic 20** | Trees | Balanced Trees (AVL / Heaps) & Priority Queues | 📅 Planned |
-| **Topic 21** | Hashing | Hash Tables & Collision Resolution | 📅 Planned |
-| **Topic 22** | Graphs | Graph Representations, BFS & DFS | 📅 Planned |
-| **Topic 23** | Advanced | Recursion, Backtracking & Dynamic Programming | 📅 Planned |
+| Topic   | Category           | Description                                                  |
+| :---    | :---               | :---                                                         |
+| **014** | Analysis           | Time & Space Complexity (Big-O Notation)                     |
+| **015** | Linear DS          | Dynamic Arrays & Resizing Mechanics                          |
+| **016** | Linear DS          | Singly & Doubly Linked Lists                                 |
+| **017** | Linear DS          | Stacks & Queues (Custom & STL)                               |
+| **018** | Sorting/Searching  | Binary Search & $\mathcal{O}(N \log N)$ Sorting Algorithms   |
+| **019** | Trees              | Binary Search Trees (BST) & Traversals                       |
+| **020** | Trees              | Balanced Trees (AVL / Heaps) & Priority Queues               |
+| **021** | Hashing            | Hash Tables & Collision Resolution                           |
+| **022** | Graphs             | Graph Representations, BFS & DFS                             |
+| **023** | Advanced           | Recursion, Backtracking & Dynamic Programming                |
+
+---
+
+## Topics
+
+### Topic 14: Time & Space Complexity Analysis
+* **File:** [`topic014_complexity.cpp`](topic014_complexity.cpp)
+* **Requirements:**
+  1. Analyze algorithmic growth rates using Big-O ($\mathcal{O}$) notation.
+  2. Implement and compare $\mathcal{O}(N^2)$ brute-force vs $\mathcal{O}(N \log N)$ two-pointer search strategies.
+  3. Evaluate time vs. space complexity trade-offs in algorithm design.
 
 ---
 
@@ -38,7 +49,7 @@ All implementations are compiled using `g++` with standard warning flags enabled
 
 ```bash
 # Compile single file topic
-g++ -std=c++17 -Wall topic14_complexity.cpp -o app
+g++ -std=c++17 -Wall topic014_complexity.cpp -o app
 
 # Run binary (Windows)
 .\app.exe
