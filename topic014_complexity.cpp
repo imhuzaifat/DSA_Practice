@@ -47,11 +47,19 @@ bool hasPairBruteForce(const vector<int>& arr, int target)  // has Time Complexi
 bool hasPairTwoPointer(vector<int> arr, int target)     // has Time Complexity: O(N log N), Space Complexity: O(1)
 {
     sort(arr.begin(), arr.end());
-    int left=0, right = arr.size()-1;
-    while(left<right)
+    int left = 0, right = arr.size() - 1;
+
+    while (left < right)
     {
-        if(arr[left] + arr[right])
+        int sum = arr[left] + arr[right];
+
+        if (sum == target)
             return true;
+        else if (sum < target)
+            left++;
+        else
+            right--;
     }
+
     return false;
 }
