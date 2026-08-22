@@ -52,6 +52,15 @@ It builds directly upon object-oriented design principles, custom dynamic memory
 
 ---
 
+### Topic 16: Singly & Doubly Linked Lists
+* **File:** [`topic016_linked_list.cpp`](topic016_linked_list.cpp)
+* **Requirements:**
+  1. Build a custom template Singly Linked List using node heap pointers.
+  2. Implement $\mathcal{O}(1)$ head insertion, tail insertion, and node deletion routines.
+  3. Manage pointer linking, edge cases (empty list, head removal), and node destruction.
+
+---
+
 ## 🛠️ How to Compile & Run
 
 All implementations are compiled using `g++` with standard warning flags enabled:
