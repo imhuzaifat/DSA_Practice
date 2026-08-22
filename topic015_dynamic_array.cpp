@@ -18,73 +18,77 @@ class MemoryException : public exception
 private:
     string message;
 public:
-    MemoryException()   {message = "Unknown Memory Error";}
-    MemoryException(string s) : message(s)  {}
+    MemoryException() : message("Unknown Memory Error") {}
+    MemoryException(string s) : message(s) {}
 
-    const char* what() const noexcept override  {return message.c_str();}
+    const char* what() const noexcept override { return message.c_str(); }
 };
 
 template <typename T>
 class DynamicArray
 {
 private:
-    T* data = nullptr;
-    int size=0, capacity=0;
+    T* data;
+    int size;
+    int capacity;
 
     void resize()
     {
-        // Capacity doubling
-        if(capacity == 0)
-            ++capacity;
-        else if(capacity<size)
-            capacity *= 2;
+        capacity = (capacity == 0) ? 1 : capacity * 2;
         
-        // New Memory Allocation
         T* newData = new T[capacity];
-        for(int i=0; i<size-1; ++i)
+
+        for (int i = 0; i < size; ++i)
         {
             newData[i] = data[i];
         }
 
-        // Deleting Old Memory and Replacing with new Data field
         delete[] data;
-        this->data = newData;
-        newData = nullptr;
+        data = newData;
     }
+
 public:
-    // Constructor & Destructor
-    DynamicArray(int initialCapacity = 1) : capacity(initialCapacity)   { resize(); }
+    DynamicArray(int initialCapacity = 2) : size(0), capacity(initialCapacity)
+    {
+        if (capacity <= 0) capacity = 2;
+        data = new T[capacity];
+    }
+
     ~DynamicArray()
     {
         delete[] data;
         data = nullptr;
     }
     
-    // Member Functions
     void push_back(T val)
     {
-        ++size;
-        if (size>capacity)
+        if (size == capacity)
+        {
             resize();
-        data[size-1] = val;
+        }
+        data[size] = val;
+        ++size;
     }
+
     T pop_back()
     {
         if (size == 0)
             throw MemoryException("Underflow Error!");
-        else
-            --size;
+        
+        --size;
         return data[size];
     }
+
     T operator[](int index) const
     {
-        if (index<0 || index >= size)
-            throw MemoryException("Index Out of Bound!");
-        else
-            return data[index];
+        if (index < 0 || index >= size)
+            throw MemoryException("Index Out of Bounds!");
+        
+        return data[index];
     }
-    int getSize() const {return size;}
-    int getCapacity() const {return capacity;}
+
+    int getSize() const { return size; }
+    int getCapacity() const { return capacity; }
 };
 
 int main()
