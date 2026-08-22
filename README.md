@@ -43,6 +43,15 @@ It builds directly upon object-oriented design principles, custom dynamic memory
 
 ---
 
+### Topic 15: Dynamic Arrays & Resizing Mechanics
+* **File:** [`topic015_dynamic_array.cpp`](topic015_dynamic_array.cpp)
+* **Requirements:**
+  1. Build a custom template dynamic vector from raw heap pointers.
+  2. Implement capacity doubling for amortized $\mathcal{O}(1)$ push operations.
+  3. Manage dynamic array allocation, element access (`operator[]`), and destruction.
+
+---
+
 ## 🛠️ How to Compile & Run
 
 All implementations are compiled using `g++` with standard warning flags enabled:
