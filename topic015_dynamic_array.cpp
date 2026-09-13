@@ -100,9 +100,9 @@ int main()
 
         // Pushing 5 different elements
         arr.push_back(234);
-        arr.push_back(586);
+        arr.push_back(648);
         arr.push_back(967);
-        arr.push_back(349);
+        arr.push_back(467);
         arr.push_back(672);
 
         // Printing Size and Capacity
